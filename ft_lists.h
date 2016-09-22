@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lists.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 13:19:21 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/22 13:20:34 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/22 13:20:51 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#ifndef FT_LISTS_H
 
-# define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include "ft_memory.h"
-# include "ft_strings.h"
-# include "ft_lists.h"
-# include "ft_streams.h"
+# define FT_LISTS_H
+# include "libft.h"
 
 #endif
