@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 16:24:48 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 19:12:49 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/22 19:19:13 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		if (source[i] == c)
-			return ((void *)(source + i + 1));
+			return ((void *)(buffer + i + 1));
 		buffer[i] = source[i];
 		i++;
 	}
