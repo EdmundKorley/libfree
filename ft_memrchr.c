@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 16:32:37 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 17:15:50 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/22 17:22:25 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/22 17:24:33 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*memrchr(const void *s, int c, size_t n)
 {
-	unsigned char	*temp;
+	const unsigned char		*buffer;
+	size_t					i;
 
-	temp = (unsigned char *)malloc(n);
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
-	return (dest);
+	buffer = (const unsigned char *)s;
+	i = n - 1;
+	while (i > 0)
+	{
+		if (buffer[i] == c)
+			return ((void *)buffer + i);
+		i--;
+	}
+	return (0);
 }
