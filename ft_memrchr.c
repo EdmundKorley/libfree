@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 17:22:25 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 17:24:33 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/23 13:22:10 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ void	*memrchr(const void *s, int c, size_t n)
 			return ((void *)buffer + i);
 		i--;
 	}
-	return (0);
+	if (*buffer == (unsigned char)c)
+		return ((void *)buffer);
+	return (NULL);
 }
