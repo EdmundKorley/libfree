@@ -6,13 +6,13 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 13:50:38 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/22 19:06:26 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*buffer;
