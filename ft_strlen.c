@@ -6,13 +6,13 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:39:03 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/23 16:43:46 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/23 18:31:54 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strlen(const char *s)
+int		ft_strlen(const char *s)
 {
 	unsigned int	count;
 
@@ -22,4 +22,5 @@ void	ft_strlen(const char *s)
 		s++;
 		count++;
 	}
+	return (count);
 }

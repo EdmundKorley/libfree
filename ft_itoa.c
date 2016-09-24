@@ -6,35 +6,11 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:37:34 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/23 17:52:43 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 05:02:43 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strrev(char *str);
-
-char	*ft_itoa(int n)
-{
-	char			*num;
-	char			digit;
-	short int		i;
-
-	num = (char *)malloc(30);
-	bzero(num, 30);
-	i = 30;
-	if (n < 0)
-		num[i++] = '-';
-	while (n > 0)
-	{
-		digit = (n % 10) + '0';
-		num[i] = digit;
-		n /= 10;
-		i++;
-	}
-	num = ft_strrev(num);
-	return (num);
-}
 
 char	*ft_strrev(char *str)
 {
@@ -57,4 +33,26 @@ char	*ft_strrev(char *str)
 	}
 	reversed_string[i++] = '\0';
 	return (reversed_string);
+}
+
+char	*ft_itoa(int n)
+{
+	char			*num;
+	char			digit;
+	short int		i;
+
+	num = (char *)malloc(30);
+	bzero(num, 30);
+	i = 30;
+	if (n < 0)
+		num[i++] = '-';
+	while (n > 0)
+	{
+		digit = (n % 10) + '0';
+		num[i] = digit;
+		n /= 10;
+		i++;
+	}
+	num = ft_strrev(num);
+	return (num);
 }

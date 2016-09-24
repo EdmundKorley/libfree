@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:07:27 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 05:03:35 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/23 18:28:46 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/23 18:44:20 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_ismiscellanous(int c)
+char	*ft_strdup(const char *s1)
 {
-	return ((32 <= c && c <= 47)
-			|| (58 <= c && c <= 64)
-			|| (123 <= c && c <= 126));
-}
+	char		*buffer;
+	size_t		size;
 
-int		ft_isprint(int c)
-{
-	return (ft_isalnum(c) || ft_ismiscellanous(c));
+	size = sizeof(char) * ft_strlen(s1);
+	buffer = (char *)ft_memalloc(size);
+	buffer = (char *)ft_memcpy(buffer, s1, size);
+	return (buffer);
 }
