@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:38:28 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 08:10:45 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/24 06:10:06 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 07:30:39 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strstr(const char *big, const char *little)
 {
-	size_t		size;
+	unsigned int	len;
+	unsigned int	len_little;
+	unsigned int	i;
+	char			*location;
 
-	size = sizeof(char) * (ft_strlen(src) + 1);
-	dst = (char *)ft_memcpy(dst, src, size);
-	return (dst);
+	if (little == NULL || big == NULL || !len_little)
+		return ((char *)big);
+	len = ft_strlen(big);
+	while (i < len)
+	{
+		if (ft_strncmp((big + i), little, len_little) == 0)
+			return (location = (char *)(big + i));
+		i++;
+	}
+	return (NULL);
 }
