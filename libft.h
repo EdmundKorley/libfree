@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 08:24:14 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 09:34:43 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		*ft_memrchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memalloc(size_t size);
 void		ft_memdel(void **ap);
-int			ft_strlen(const char *s);
+size_t		ft_strlen(const char *s);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 int			ft_atoi(const char *str);
