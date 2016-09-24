@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 07:31:39 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 07:47:54 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 09:58:18 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	len_big = ft_strlen(big);
 	len_little = ft_strlen(little);
+	i = 0;
 	if (little == NULL || big == NULL)
 		return ((char *)big);
 	if (len_little > len)
