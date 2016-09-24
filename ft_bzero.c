@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 19:06:26 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*buffer;
 
 	i = 0;
-	buffer = s;
+	buffer = (unsigned char *)s;
 	while (i < n)
 	{
 		buffer[i] = 0;
