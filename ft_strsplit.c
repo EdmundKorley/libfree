@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 20:18:17 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 20:52:05 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 20:53:46 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ int		ft_splitstr(char **tab, const char *s, char c, size_t len)
 		while (s[i] == c && s[i])
 			i++;
 		while (s[i] != c && s[i])
-			wordlen++, i++;
+		{
+			wordlen++;
+			i++;
+		}
 		if ((tab[count] = ft_strsub(&s[i - wordlen], 0, wordlen)) == NULL)
 			return (0);
 		count++;
