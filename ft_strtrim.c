@@ -6,18 +6,18 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:56:57 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 20:17:17 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 20:58:54 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_nonwsi(char const *s)
+int			ft_nonwsi(char const *s)
 {
-	size_t		i;
+	int		i;
 
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < (int)ft_strlen(s))
 	{
 		if (!WS(s[i]))
 			return (i);
@@ -26,9 +26,9 @@ size_t		ft_nonwsi(char const *s)
 	return (-1);
 }
 
-size_t		ft_nonwsri(char const *s)
+int			ft_nonwsri(char const *s)
 {
-	size_t		i;
+	int		i;
 
 	i = ft_strlen(s) - 1;
 	while (i > -1)
@@ -42,8 +42,8 @@ size_t		ft_nonwsri(char const *s)
 
 char		*ft_strtrim(char const *s)
 {
-	size_t		start;
-	size_t		end;
+	int			start;
+	int			end;
 	char		*buffer;
 
 	start = ft_nonwsi(s);
