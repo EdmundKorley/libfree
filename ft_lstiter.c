@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/25 11:55:00 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/25 11:58:36 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t			i;
-	unsigned char	*buffer;
+	t_list		*node;
 
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
+	node = lst;
+	if (lst == NULL)
+		return ;
+	while (node)
 	{
-		buffer[i] = 0;
-		i++;
+		f(node);
+		node = node->next;
 	}
 }

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/24 05:09:39 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 09:37:55 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t			i;
-	unsigned char	*buffer;
+	void		*rest_of_s1;
+	char		*result;
 
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
-	{
-		buffer[i] = 0;
-		i++;
-	}
+	rest_of_s1 = ft_memchr(s1, 0, ft_strlen(s1) + 1);
+	result = ft_strcpy(rest_of_s1, s2);
+	return (result);
 }

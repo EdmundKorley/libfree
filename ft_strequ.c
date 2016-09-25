@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/24 19:42:23 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 19:44:45 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*buffer;
-
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	while (*s1 && *s2)
 	{
-		buffer[i] = 0;
-		i++;
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
+	return (1);
 }

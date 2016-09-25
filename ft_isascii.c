@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/23 18:04:13 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/23 18:04:59 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_isascii(int c)
 {
-	size_t			i;
-	unsigned char	*buffer;
-
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
-	{
-		buffer[i] = 0;
-		i++;
-	}
+	return ((0 <= c) && (c <= 127));
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/24 19:45:16 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 19:49:14 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*buffer;
+	size_t		i;
 
 	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
+	while (s1[i] && s2[i] && i < n)
 	{
-		buffer[i] = 0;
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
 	}
+	return (1);
 }

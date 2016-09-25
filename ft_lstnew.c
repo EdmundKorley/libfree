@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/25 08:20:00 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/25 08:29:49 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t			i;
-	unsigned char	*buffer;
+	t_list		*node;
 
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	if (content == NULL)
 	{
-		buffer[i] = 0;
-		i++;
+		node->content = NULL;
+		node->content_size = 0;
 	}
+	else
+	{
+		node->content = (void *)content;
+		node->content_size = content_size;
+	}
+	node->next = NULL;
+	return (node);
 }

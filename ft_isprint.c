@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/23 18:07:27 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 05:03:35 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_ismiscellanous(int c)
 {
-	size_t			i;
-	unsigned char	*buffer;
+	return ((32 <= c && c <= 47)
+			|| (58 <= c && c <= 64)
+			|| (123 <= c && c <= 126));
+}
 
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
-	{
-		buffer[i] = 0;
-		i++;
-	}
+int		ft_isprint(int c)
+{
+	return (ft_isalnum(c) || ft_ismiscellanous(c));
 }

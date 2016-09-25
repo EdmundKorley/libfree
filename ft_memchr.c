@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 17:16:35 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/22 19:06:54 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/24 09:52:54 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char		*buffer;
 	size_t					i;
 
-	buffer = (const unsigned char *)s;
+	buffer = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
@@ -25,5 +25,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)buffer + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

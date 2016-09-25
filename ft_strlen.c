@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 18:28:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:06:42 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/23 16:39:03 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/24 09:35:02 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t		ft_strlen(const char *s)
 {
-	size_t			i;
-	unsigned char	*buffer;
+	size_t		count;
 
-	i = 0;
-	buffer = (unsigned char *)s;
-	while (i < n)
+	count = 0;
+	while (s != NULL)
 	{
-		buffer[i] = 0;
-		i++;
+		s++;
+		count++;
 	}
+	return (count);
 }
