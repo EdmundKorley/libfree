@@ -6,7 +6,7 @@
 #    By: ekorley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/21 10:03:37 by ekorley           #+#    #+#              #
-#    Updated: 2016/09/24 09:54:47 by ekorley          ###   ########.fr        #
+#    Updated: 2016/09/25 12:25:06 by ekorley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ all: $(NAME)
 
 # Here we generate our library and index the result for better searching.
 $(NAME): $(OBJECTS)
-	norminette
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
@@ -48,6 +47,8 @@ $(NAME): $(OBJECTS)
 	gcc -Wall -Werror -Wextra -c -o $@ $<
 
 # Our utility rules
+test:
+	gcc -I./ *.c -o test
 clean:
 	rm -f *.o
 fclean: clean
