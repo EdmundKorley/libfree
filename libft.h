@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 12:43:12 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 16:04:10 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-# define WS(x) (x == ' ' || x == '\t' || x == '\n')
+# define WS(x) (x == ' ' || x == '\t' || x == '\n' || x == '\v' || x == '\r' || x == '\f')
 
 typedef struct		s_list
 {

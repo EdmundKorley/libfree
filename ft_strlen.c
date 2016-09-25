@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:39:03 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 09:35:02 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 15:58:52 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlen(const char *s)
 	size_t		count;
 
 	count = 0;
-	while (s != NULL)
+	while (*s)
 	{
 		s++;
 		count++;
