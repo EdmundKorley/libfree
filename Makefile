@@ -6,14 +6,14 @@
 #    By: ekorley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/21 10:03:37 by ekorley           #+#    #+#              #
-#    Updated: 2016/09/25 12:25:06 by ekorley          ###   ########.fr        #
+#    Updated: 2016/09/25 13:03:01 by ekorley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # We define our groups' files by category
 NAME = libft.a
 FT_LISTS = ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o \
-		  ft_listiter.o ft_lstmap.o ft_lstfold.o
+		  ft_lstiter.o ft_lstmap.o ft_lstfold.o
 FT_STREAMS = ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
 			ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
 			ft_putnbr_fd.o
@@ -29,7 +29,7 @@ FT_STRINGS = ft_strlen.o ft_toupper.o ft_tolower.o ft_atoi.o \
 FT_MEMORY = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o \
 			ft_memmove.o ft_memchr.o ft_memrchr.o ft_memcmp.o \
 			ft_memalloc.o ft_memdel.o
-OBJECTS = $(FT_MEMORY) $(FT_STRINGS)
+OBJECTS = $(FT_MEMORY) $(FT_STRINGS) $(FT_STREAMS) $(FT_LISTS)
 
 # Our default rule to create our library.
 all: $(NAME)
