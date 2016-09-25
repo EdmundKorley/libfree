@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 17:16:35 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 09:52:54 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 14:36:31 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (buffer[i] == c)
-			return ((void *)buffer + i);
+			return ((void *)(buffer + i));
 		i++;
 	}
 	return (NULL);

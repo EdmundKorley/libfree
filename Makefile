@@ -5,52 +5,66 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ekorley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/09/21 10:03:37 by ekorley           #+#    #+#              #
-#    Updated: 2016/09/25 13:03:01 by ekorley          ###   ########.fr        #
+#    Created: 2016/09/25 14:36:54 by ekorley           #+#    #+#              #
+#    Updated: 2016/09/25 14:58:41 by ekorley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# We define our groups' files by category
 NAME = libft.a
-FT_LISTS = ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o \
-		  ft_lstiter.o ft_lstmap.o ft_lstfold.o
-FT_STREAMS = ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
-			ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
-			ft_putnbr_fd.o
-FT_STRINGS = ft_strlen.o ft_toupper.o ft_tolower.o ft_atoi.o \
-			ft_itoa.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
-			ft_isascii.o ft_isprint.o ft_strdup.o ft_strcpy.o \
-			ft_strncpy.o ft_strcat.o ft_strncat.o ft_strlcat.o \
-			ft_strchr.o ft_strrchr.o ft_strstr.o ft_strnstr.o \
-			ft_strcmp.o ft_strncmp.o ft_strnew.o ft_strdel.o \
-			ft_strclr.o ft_striter.o ft_striteri.o ft_strmap.o \
-			ft_strmapi.o ft_strequ.o ft_strnequ.o ft_strsub.o \
-			ft_strjoin.o ft_strtrim.o ft_strsplit.o
-FT_MEMORY = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o \
-			ft_memmove.o ft_memchr.o ft_memrchr.o ft_memcmp.o \
-			ft_memalloc.o ft_memdel.o
-OBJECTS = $(FT_MEMORY) $(FT_STRINGS) $(FT_STREAMS) $(FT_LISTS)
 
-# Our default rule to create our library.
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+SRC =	ft_atoi.c \
+		ft_bzero.c \
+		ft_itoa.c \
+		ft_mem{alloc,ccpy,rchr,chr,cmp,cpy,del,move,set}.c \
+		ft_put{char,char_fd,endl,endl_fd,nbr,nbr_fd,str,str_fd}.c \
+		ft_strcat.c \
+		ft_strchr.c \
+		ft_strclr.c \
+		ft_strcmp.c \
+		ft_strcpy.c \
+		ft_strdel.c \
+		ft_strdup.c \
+		ft_strequ.c \
+		ft_is{alpha,print,alnum,ascii,digit}.c \
+		ft_str{iter,iteri}.c \
+		ft_strjoin.c \
+		ft_strlcat.c \
+		ft_strlen.c \
+		ft_str{map,mapi}.c \
+		ft_strncat.c \
+		ft_strncmp.c \
+		ft_strncpy.c \
+		ft_strnequ.c \
+		ft_strnew.c \
+		ft_strnstr.c \
+		ft_strrchr.c \
+		ft_strsplit.c \
+		ft_strstr.c \
+		ft_strsub.c \
+		ft_strtrim.c \
+		ft_to{lower,upper}.c \
+		ft_lst{add,del,delone,iter,map,new}.c \
+
+OBJ = $(SRC:.c=.o)
+
 all: $(NAME)
 
-# Here we generate our library and index the result for better searching.
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+$(NAME):
+	@$(CC) $(CFLAGS) -c $? $(SRC)
+	@ar rc $(NAME) $? $(OBJ)
+	@ranlib $(NAME)
+	@echo "\033[32mBuilt library.\033[0m"
 
-# The following rule is a pattern for converting how make
-# should convert *.o files specified as dependencies to *.c.
-# $@ is the name of the target to be transformed (e.g. ft_strlen.o) and
-# $< is the name of the result (e.g. ft_strlen.c).
-%.o: %.c
-	gcc -Wall -Werror -Wextra -c -o $@ $<
-
-# Our utility rules
-test:
-	gcc -I./ *.c -o test
 clean:
-	rm -f *.o
+	@/bin/rm -f $(OBJ)
+	@echo "\033[32mCleaned up object files.\033[0m"
+
 fclean: clean
-	rm -f $(NAME)
+	@/bin/rm $(NAME)
+	@echo "\033[32mCleaned up compiled files.\033[0m"
+
 re: fclean all
+
+.PHONY: all clean fclean re

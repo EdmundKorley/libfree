@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:05:31 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/23 17:36:23 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 14:17:38 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ int		ft_atoi(const char *str)
 		else if ((str[i] > '9' || str[i] < '0') && !WS(str[i]))
 			break ;
 		else if (WS(str[i]))
-			;
+		{
+			i++;
+			continue ;
+		}
 		else
 			result = (result * 10) + ft_ctoi(str[i]);
 		i++;
