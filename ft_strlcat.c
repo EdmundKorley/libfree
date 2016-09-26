@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:45:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 05:52:08 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 05:56:30 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	void		*rest_of_s1;
-	char		*result;
-	size_t		len;
+	size_t	i;
+	size_t	re;
 
-	rest_of_s1 = ft_memchr(dst, 0, size);
-	len = sizeof(char) * ft_strlen(src);
-	result = (char *)ft_memcpy(rest_of_s1, src, len);
-	ft_strcat(result, "\0");
-	return (ft_strlen(dst));
+	re = 0;
+	i = -1;
+	while (src[++i])
+		;
+	re = i;
+	i = -1;
+	while (dst[++i] && i < size)
+		;
+	re += (i < size) ? i : size;
+	if ((int)(size - ft_strlen(dst) - 1) > 0)
+		ft_strncat(dst, src, size - ft_strlen(dst) - 1);
+	return (re);
 }

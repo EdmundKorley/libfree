@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:40:00 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 05:44:03 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 05:54:16 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,20 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	void		*rest_of_s1;
-	char		*result;
+	char	*cur;
 
-	rest_of_s1 = ft_memchr(s1, 0, 1000);
-	result = (char *)ft_memcpy(rest_of_s1, s2, n);
-	ft_strcat(result, "\0");
-	return (result);
+	cur = s1;
+	while (*cur != '\0')
+	{
+		cur++;
+	}
+	while (*s2 != '\0' && n > 0)
+	{
+		*cur = *s2;
+		cur++;
+		s2++;
+		n--;
+	}
+	*cur = '\0';
+	return (s1);
 }
