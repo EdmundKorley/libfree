@@ -6,29 +6,19 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:09:39 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 05:50:16 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 07:21:56 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *dst, const char *src)
 {
-	char	*cur1;
-	char	*cur2;
+	size_t		dst_len;
+	char		*end_of_dst;
 
-	cur1 = s1;
-	cur2 = (char *)s2;
-	while (*cur1 != '\0')
-	{
-		cur1++;
-	}
-	while (*cur2 != '\0')
-	{
-		*cur1 = *cur2;
-		cur1++;
-		cur2++;
-	}
-	*cur1 = '\0';
-	return (s1);
+	dst_len = ft_strlen(dst);
+	end_of_dst = dst + (sizeof(char) * dst_len);
+	dst = (char *)ft_strcpy(dst + dst_len, src);
+	return (dst - dst_len);
 }

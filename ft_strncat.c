@@ -6,28 +6,19 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:40:00 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 05:54:16 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 07:20:44 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	char	*cur;
+	size_t		dst_len;
+	char		*end_of_dst;
 
-	cur = s1;
-	while (*cur != '\0')
-	{
-		cur++;
-	}
-	while (*s2 != '\0' && n > 0)
-	{
-		*cur = *s2;
-		cur++;
-		s2++;
-		n--;
-	}
-	*cur = '\0';
-	return (s1);
+	dst_len = ft_strlen(dst);
+	end_of_dst = dst + (sizeof(char) * dst_len);
+	dst = (char *)ft_memcpy(dst + dst_len, src, n);
+	return (dst - dst_len);
 }
