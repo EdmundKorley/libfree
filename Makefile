@@ -6,7 +6,7 @@
 #    By: ekorley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/25 14:36:54 by ekorley           #+#    #+#              #
-#    Updated: 2016/09/25 14:58:41 by ekorley          ###   ########.fr        #
+#    Updated: 2016/09/26 11:01:58 by ekorley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,8 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC =	ft_atoi.c \
+SRC =	ft_{atoi,itoa,lenofint}.c \
 		ft_bzero.c \
-		ft_itoa.c \
 		ft_mem{alloc,ccpy,rchr,chr,cmp,cpy,del,move,set}.c \
 		ft_put{char,char_fd,endl,endl_fd,nbr,nbr_fd,str,str_fd}.c \
 		ft_strcat.c \

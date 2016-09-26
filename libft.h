@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 10:33:52 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 10:58:13 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+int					ft_lenofint(int n);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
