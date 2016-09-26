@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:16:55 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 19:18:15 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 20:13:45 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return ((char *)ft_memalloc(size));
+	return ((char *)ft_memalloc(size + 1));
 }

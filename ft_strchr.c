@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:57:18 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 06:04:57 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 20:11:29 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t		size;
+	char		*result;
 
 	size = sizeof(char) * ft_strlen(s);
-	return ((char *)ft_memchr(s, c, size));
+	result = (char *)ft_memchr(s, c, size);
+	if (result == NULL)
+		return (NULL);
+	return (result);
 }
