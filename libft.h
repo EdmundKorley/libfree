@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 16:04:10 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 20:39:39 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <string.h>
 # define WS(x) (x == ' ' || x == '\t' || x == '\n' || x == '\v' || x == '\r' || x == '\f')
 
-typedef struct		s_list
+typedef struct			s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}						t_list;
 
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
