@@ -6,56 +6,46 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:37:34 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 19:46:03 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/26 04:55:43 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+void	ft_makenegative(int *n, int *negative)
 {
-	static	char	reversed_string[100];
-	int				reverse_i;
-	int				i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (*n < 0)
 	{
-		i++;
+		*n *= -1;
+		*negative = 1;
 	}
-	reverse_i = i - 1;
-	i = 0;
-	while (reverse_i != -1)
-	{
-		reversed_string[i] = str[reverse_i];
-		reverse_i--;
-		i++;
-	}
-	reversed_string[i++] = '\0';
-	return (reversed_string);
 }
 
 char	*ft_itoa(int n)
 {
-	char			*num;
-	char			digit;
-	short int		i;
+	int		temp;
+	int		len;
+	int		negative;
+	char	*str;
 
-	num = (char *)malloc(30);
-	bzero(num, 30);
-	i = 0;
-	if (n < 0)
+	if (n == -2147483648)
+		return ("-2147483648");
+	temp = n;
+	len = 2;
+	negative = 0;
+	ft_makenegative(&n, &negative);
+	while (temp /= 10)
+		len++;
+	len += negative;
+	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+		return (NULL);
+	str[--len] = '\0';
+	while (len--)
 	{
-		num[i++] = '-';
-		n = -n;
+		str[len] = n % 10 + '0';
+		n = n / 10;
 	}
-	while (n > 0)
-	{
-		digit = (n % 10) + '0';
-		num[i] = digit;
-		n /= 10;
-		i++;
-	}
-	num = ft_strrev(num);
-	return (num);
+	if (negative)
+		str[0] = '-';
+	return (str);
 }
