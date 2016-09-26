@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:05:31 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 16:06:25 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/25 19:29:12 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_atoi(const char *str)
 	sign = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '-')
+		if (str[i] == '-' && ft_isdigit(str[i + 1]))
 			sign = -sign;
 		else if ((str[i] > '9' || str[i] < '0') && !WS(str[i]))
 			break ;
