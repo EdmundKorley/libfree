@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:37:34 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 10:58:16 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/27 09:32:20 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = ft_lenofint(n) + 1;
-	if (!(s = (char*)malloc(sizeof(char) * len)))
+	if (!(s = (char *)malloc(sizeof(char) * len)))
 		return (NULL);
 	if (n == 0)
 		s[0] = '0';
