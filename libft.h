@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 10:28:29 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/28 12:05:40 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void				*ft_memrchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-void				*ft_memrotate(void *buffer, size_t size, int torotate);
+void				*ft_memrotate(void *s, size_t size, size_t nrotate);
 
 /*
 **	These set of functions manipulate strings,
@@ -89,14 +89,15 @@ char				**ft_strsplit(char const *s, char c);
 
 void				ft_tabforeach(int *tab, int len, void (*f)(int));
 int					*ft_tabmap(int *tab, int len, int (*f)(int));
-int					*ft_tabreduce(int *tab, int len, int (*f)(int, int));
+int					ft_tabreduce(int *tab, int len, int memo,
+					int (*f)(int, int));
 int					*ft_tabfilter(int *tab, int len, int (*f)(int));
 int					ft_tabsum(int *tab, int len);
 int					ft_tabmax(int *tab, int len);
 int					ft_tabmin(int *tab, int len);
-int					ft_tabmode(int *tab, int len);
 int					ft_tabmean(int *tab, int len);
-int					ft_tabrotate(int *tab, int len, int torotate);
+int					*ft_tabnewrange(int start, int end, int skip);
+int					*ft_tabrotate(int *tab, int len, int torotate);
 
 /*
 **	These set of functions involving sending data to different streams,
@@ -126,7 +127,7 @@ typedef	struct		s_list
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void(*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *newnode);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
