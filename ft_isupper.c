@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 17:54:42 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 10:06:39 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/28 10:06:58 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/28 10:08:14 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Checks if a char (received as an int for historical reasons),
-**	is an alphabetical character.
+**	Checks if a char (received as int for historical reasons) is a valid
+**	uppercase character.
 */
 
-int		ft_isalpha(int c)
+int		ft_isupper(int c)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return ('A' <= c && c <= 'Z');
 }

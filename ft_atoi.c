@@ -6,23 +6,11 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:05:31 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 19:29:12 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/28 10:03:33 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_ctoi(char letter)
-{
-	int		num;
-
-	num = (int)(letter - '0');
-	if (num > 9 || num < 0)
-	{
-		return (0);
-	}
-	return (num);
-}
 
 int		ft_atoi(const char *str)
 {

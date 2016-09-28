@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_ctoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 17:54:42 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 10:06:39 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/28 10:03:41 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/28 10:04:29 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Checks if a char (received as an int for historical reasons),
-**	is an alphabetical character.
+**	Turns a char into numerical digit, if possible.
 */
 
-int		ft_isalpha(int c)
+int		ft_ctoi(char letter)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	int		num;
+
+	num = (int)(letter - '0');
+	if (num > 9 || num < 0)
+	{
+		return (0);
+	}
+	return (num);
 }

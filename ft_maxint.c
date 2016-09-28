@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_maxint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 17:54:42 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 10:06:39 by ekorley          ###   ########.fr       */
+/*   Created: 2016/09/28 09:32:25 by ekorley           #+#    #+#             */
+/*   Updated: 2016/09/28 09:32:37 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	Checks if a char (received as an int for historical reasons),
-**	is an alphabetical character.
-*/
-
-int		ft_isalpha(int c)
+int		ft_maxint(int num1, int num2)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	if (num1 > num2)
+		return (num1);
+	else
+		return (num2);
 }
