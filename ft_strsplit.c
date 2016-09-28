@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 20:18:17 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 10:19:35 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/28 10:28:56 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int		ft_splitstr(char **tab, const char *s, char c, size_t len)
 	return (1);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char		**words;
 	int			len;
