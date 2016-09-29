@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 19:10:01 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 15:40:12 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void				*ft_memrotate(void *s, size_t size, size_t nrotate);
 **	and primitive data types like ints and chars.
 */
 
-size_t				ft_strlen(const char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_ctoi(char letter);
@@ -57,6 +56,8 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_ismiscellanous(int c);
+size_t				ft_strlen(const char *s);
+char				*ft_strrev(char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
@@ -72,10 +73,11 @@ char				*ft_strnstr(const char *big, const char *lil, size_t len);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
-void				ft_striter(char *s, void (*f)(char *));
-void				ft_striteri(char *s, void (*f)(unsigned int, char *));
-char				*ft_strmap(char const *s, char (*f)(char));
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void				ft_striter(char *s, void (*applyf)(char *));
+void				ft_striteri(char *s, void (*applyf)(unsigned int, char *));
+char				*ft_strmap(char const *s, char (*applyf)(char));
+char				*ft_strmapi(char const *s,
+					char (*applyf)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
@@ -87,11 +89,11 @@ char				**ft_strsplit(char const *s, char c);
 **	These set of functions implement useful routines on integer arrays.
 */
 
-void				ft_tabforeach(int *tab, int len, void (*f)(int));
-int					*ft_tabmap(int *tab, int len, int (*f)(int));
+void				ft_tabforeach(int *tab, int len, void (*applyf)(int));
+int					*ft_tabmap(int *tab, int len, int (*applyf)(int));
 int					ft_tabreduce(int *tab, int len, int memo,
-					int (*f)(int, int));
-int					*ft_tabfilter(int *tab, int len, int (*f)(int));
+					int (*applyf)(int, int));
+int					*ft_tabfilter(int *tab, int len, int (*applyf)(int));
 int					ft_tabsum(int *tab, int len);
 int					ft_tabmax(int *tab, int len);
 int					ft_tabmin(int *tab, int len);
@@ -128,8 +130,8 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void(*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *newnode);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstiter(t_list *lst, void (*applyf)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*applyf)(t_list *elem));
 
 /*
 **	These set of functions involve creating and manipulating binary trees.
@@ -151,13 +153,29 @@ void				*btree_search_item(t_btree *root, void *data_ref,
 					int (*cmpf)(void*, void*));
 
 /*
-**	These set of functions involve creating and manipulating stacks.
+**	These set of functions involve linear algebra operations on matrices.
 */
+
+int					**new_matrix(int x, int y);
+int					vector_dot_product(int *x, int *y, int len);
+int					**vector_to_matrix(int *vector, int len, int is_vertical);
+int					**matrix_matrix_product(int **x, int filler,
+					int **y, int shared_dim);
+int					**matrix_transpose(int **matrix, int w, int h);
+void				matrix_foreach(int **matrix, int w, int h,
+					void(*applyf)(int));
+int					**matrix_map(int **matrix, int w, int h,
+					int(*applyf)(int));
+int					matrix_reduce(int **matrix, int w, int h,
+					int(*applyf)(int, int));
 
 /*
-**	These set of functions involve creating and manipulating dynamic arrays,
-**	the kind you might find in a higher level language like Python.
+**	These set of functions involve bit-manipulation related routines.
+**	For now, base has to be a a power of 2 for the encoding routines to work.
 */
 
+char				*encode_base_n(char *buffer, int base, char *c_set);
+char				*decode_base_n(char *buffer, int base, char *c_set);
+void				*fixed_xor(void *buffer_a, void *buffer_b, size_t len);
 
 #endif
