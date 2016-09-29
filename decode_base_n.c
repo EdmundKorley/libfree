@@ -6,12 +6,11 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 10:35:54 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 12:59:44 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 13:26:08 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /*
 **	Takes a character array representation of 'bits' corresponding to
