@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 05:50:26 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 10:05:49 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 12:48:37 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,29 @@ static int		find_power_of_2(int base)
 	return (0);
 }
 
+static void		config_character_set(char **c_set)
+{
+	if (!*c_set)
+	{
+		*c_set = ft_memalloc(sizeof(char) * (65));
+		ft_strcat(*c_set, "0123456789");
+		ft_strcat(*c_set, "abcdefghijklmnopqrstuvwxyz");
+		ft_strcat(*c_set, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		ft_strcat(*c_set, "+/");
+		ft_strcat(*c_set, "\0");
+	}
+}
+
 static char		*base_n_to_bits(char digit, char *c_set, int bit_width)
 {
 	char	*bits;
 	int		i;
 	int		j;
+	int		len;
 
 	i = -1;
-	while (++i < ft_strlen(c_set))
+	len = (int)ft_strlen(c_set);
+	while (++i < len)
 		if (digit == c_set[i])
 			break ;
 	bits = (char *)ft_memalloc((bit_width + 1) * sizeof(char));
@@ -58,11 +73,10 @@ char			*encode_base_n(char *buffer, int base, char *c_set)
 	int		len;
 	int		i;
 
-	if (!c_set)
-		c_set = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/";
+	config_character_set(&c_set);
 	bit_width = find_power_of_2(base);
 	len = (int)ft_strlen(buffer);
-	result = (char *)ft_memalloc(sizeof(char) * ((bit_width * len) + 1));
+	result = (char *)ft_memalloc(sizeof(char) * (bit_width * len) + 1);
 	if (!result)
 		return (NULL);
 	i = 0;
