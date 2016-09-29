@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/25 07:57:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 07:58:14 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 15:51:30 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
+	if (s)
 	{
-		ft_putchar(*s);
-		s++;
+		while (*s)
+		{
+			ft_putchar(*s);
+			s++;
+		}
 	}
 }

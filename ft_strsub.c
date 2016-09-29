@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:49:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 19:54:30 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 15:54:06 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*buffer;
 
+	if (!s)
+		return (NULL);
 	buffer = (char *)ft_memalloc(len + 1);
 	if (!buffer)
 		return (NULL);

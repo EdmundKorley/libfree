@@ -6,19 +6,25 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:58:55 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/25 20:24:38 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 16:08:37 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	Merges two NUL-terminated strings into a new allocated string.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t		len;
 	char		*buffer;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	buffer = (char *)ft_memalloc(len);
+	buffer = ft_strnew(len);
 	if (buffer == NULL)
 		return (NULL);
 	ft_strcat(buffer, s1);
