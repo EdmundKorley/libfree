@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 11:56:00 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/28 12:09:35 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/28 18:24:54 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int		*ft_tabrotate(int *tab, int len, int nrotate)
 		return (NULL);
 	offset = len - torotate;
 	buffer = ft_memcpy(buffer, tab + offset, sizeof(int) * torotate);
-	buffer = ft_memcpy(buffer + offset, tab, sizeof(int) * (len - torotate));
-	return (buffer);
+	buffer = ft_memcpy(buffer + torotate, tab, sizeof(int) * (len - torotate));
+	return (buffer - torotate);
 }
