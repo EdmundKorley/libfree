@@ -6,7 +6,7 @@
 #    By: ekorley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/25 14:36:54 by ekorley           #+#    #+#              #
-#    Updated: 2016/09/26 11:01:58 by ekorley          ###   ########.fr        #
+#    Updated: 2016/09/29 15:40:52 by ekorley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC =	ft_{atoi,itoa,lenofint}.c \
 		ft_mem{alloc,ccpy,rchr,chr,cmp,cpy,del,move,set}.c \
 		ft_put{char,char_fd,endl,endl_fd,nbr,nbr_fd,str,str_fd}.c \
 		ft_strcat.c \
+		ft_strrev.c \
 		ft_strchr.c \
 		ft_strclr.c \
 		ft_strcmp.c \
@@ -45,6 +46,15 @@ SRC =	ft_{atoi,itoa,lenofint}.c \
 		ft_strtrim.c \
 		ft_to{lower,upper}.c \
 		ft_lst{add,del,delone,iter,map,new}.c \
+		btree_{create_node,apply_infix,apply_prefix}.c \
+		btree_{apply_suffix,level_count,search_item}.c \
+		ft_tab{foreach,map,reduce,filter,sum,max,min,mean,newrange,rotate}.c \
+		new_matrix.c \
+		vector_{dot_product,to_matrix}.c \
+		matrix_{matrix_product,transpose,foreach,map,reduce}.c \
+		encode_base_n.c \
+		decode_base_n.c \
+		fixed_xor.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -54,15 +64,15 @@ $(NAME):
 	@$(CC) $(CFLAGS) -c $? $(SRC)
 	@ar rc $(NAME) $? $(OBJ)
 	@ranlib $(NAME)
-	@echo "\033[32mBuilt library.\033[0m"
+	@echo "\033[32mSuccessfully generated $(NAME)\033[0m"
 
 clean:
 	@/bin/rm -f $(OBJ)
-	@echo "\033[32mCleaned up object files.\033[0m"
+	@echo "\033[32mCleaned up object files from generating $(NAME)\033[0m"
 
 fclean: clean
 	@/bin/rm $(NAME)
-	@echo "\033[32mCleaned up compiled files.\033[0m"
+	@echo "\033[32mCleaned up $(NAME)\033[0m"
 
 re: fclean all
 
