@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Copies n-bytes from src into the dst buffer.
+*/
+
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t		i;

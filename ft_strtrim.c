@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Trims a string of leading and trailing whitespace characters.
+*/
+
 char		*ft_strtrim(char const *s)
 {
 	unsigned int	i;

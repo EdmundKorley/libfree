@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Copies all of src, a NUL-terminated string, into the dst buffer.
+*/
+
 char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t		size;

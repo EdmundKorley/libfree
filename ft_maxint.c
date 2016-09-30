@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Returns maximum integer out of two options.
+*/
+
 int		ft_maxint(int num1, int num2)
 {
 	if (num1 > num2)

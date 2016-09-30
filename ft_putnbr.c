@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Send a NUL-terminated string, representing a number, to the standard
+**	output stream.
+*/
+
 void	ft_putnbr(int nb)
 {
 	if (nb > 2147483647 || nb < -2147483648)

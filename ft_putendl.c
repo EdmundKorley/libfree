@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Send a NUL-terminated string, followed by a newline, to the standard out
+**	stream.
+*/
+
 void	ft_putendl(char const *s)
 {
 	if (s)

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Performs a reverse linear search on a buffer of memory for the
+**	character represented by c.
+*/
+
 void	*ft_memrchr(const void *s, int c, size_t n)
 {
 	const unsigned char		*buffer;

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Calculates the number of characters in a NUL-terminated string.
+*/
+
 size_t		ft_strlen(const char *s)
 {
 	size_t		count;

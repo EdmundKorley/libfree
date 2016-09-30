@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-**	Fills a string with NUL.
+**	Fills a NUL-terminated string with NUL.
 */
 
 void	ft_strclr(char *s)

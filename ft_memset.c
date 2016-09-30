@@ -12,12 +12,16 @@
 
 #include "libft.h"
 
+/*
+**	Sets len-bytes of memoyr with the byte represented by c.
+*/
+
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*ptr;
 
-	ptr = b;
+	ptr = (unsigned char *)b;
 	i = 0;
 	while (i < len)
 	{

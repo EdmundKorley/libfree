@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Performs a linear search on a buffer for the character represented
+**	by c.
+*/
+
 char	*ft_strchr(const char *src, int c)
 {
 	while (*src)

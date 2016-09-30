@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Returns the location of the substring little in big, if found.
+*/
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	len_big;

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Iterates through a linked list and applies a callback function f to
+**	each node in that linked list.
+*/
+
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	t_list		*node;

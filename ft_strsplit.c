@@ -13,8 +13,8 @@
 #include "libft.h"
 
 /*
-**	Splits a string into an array of strings, with c acting as a delimiter.
-**	EG:
+**	Splits a string into an array of strings, with the character c
+**	acting as a delimiter. For example:
 **		ft_strsplit("roses are red", ' ') => { "roses", "are", "red" }
 */
 

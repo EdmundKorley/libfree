@@ -6,11 +6,15 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:37:34 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/27 09:32:20 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 18:27:28 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	Turns a number into its character-array equivalent.
+*/
 
 char	*ft_itoa(int n)
 {

@@ -13,7 +13,8 @@
 #include "libft.h"
 
 /*
-**	Send a NUL-terminated string to standard output.
+**	Send a NUL-terminated string to the stream specified by the fd file
+**	descriptor.
 */
 
 void	ft_putstr_fd(char const *s, int fd)

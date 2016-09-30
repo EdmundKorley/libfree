@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Searches the big string for the little substring, and if found
+**	returns the address to the little string.
+*/
+
 char	*ft_strstr(const char *big, const char *little)
 {
 	unsigned int	len_big;

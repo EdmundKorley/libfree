@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Contatenates n-bytes from src into dst.
+*/
+
 char	*ft_strncat(char *dst, const char *src, size_t n)
 {
 	size_t		dst_len;

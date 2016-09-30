@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Compares all pre-NUL characters in both s1 and s2 for equality.
+*/
+
 int		ft_strcmp(const char *s1, const char *s2)
 {
 	int		i;

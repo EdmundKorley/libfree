@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Send a NUL-terminated string, representing a number, to the stream
+**	specified by the fd file descriptor.
+*/
+
 void	ft_putnbr_fd(int nb, int fd)
 {
 	if (nb > 2147483647 || nb < -2147483648)

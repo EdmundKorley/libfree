@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Fills a buffer with NUL.
+*/
+
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;

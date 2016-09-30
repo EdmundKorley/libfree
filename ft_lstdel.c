@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Deletes a series of connected linked list nodes.
+*/
+
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list		*node;

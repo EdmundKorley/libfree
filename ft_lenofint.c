@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Calculates the number of digits in a integer.
+*/
+
 int		ft_lenofint(int num)
 {
 	int		len;

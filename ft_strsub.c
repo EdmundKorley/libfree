@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Returns a substring of size len, starting at the offset index of start.
+*/
+
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*buffer;

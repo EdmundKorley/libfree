@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Send a character to the standard out stream.
+*/
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

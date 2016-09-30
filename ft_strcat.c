@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Concatenates the string src onto the end of dst,
+**	returning a new allocated buffer.
+*/
+
 char	*ft_strcat(char *dst, const char *src)
 {
 	size_t		dst_len;

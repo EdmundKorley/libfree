@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Checks the first n-bytes of s1 and s2 for equality.
+*/
+
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t		i;

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Checks to see if a character is alphanumeric.
+*/
+
 int		ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Returns a copy of a NUL-terminated string.
+*/
+
 char	*ft_strdup(const char *string)
 {
 	char		*buffer;

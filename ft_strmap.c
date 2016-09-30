@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:32:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 16:09:32 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 18:20:49 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char		*buffer;
 	size_t		i;
+	size_t		len;
 
 	if (!s)
 		return (NULL);
-	buffer = ft_strdup(s);
+	len = ft_strlen(s);
+	buffer = ft_strnew(len);
 	if (buffer == NULL)
 		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < len)
 	{
 		buffer[i] = f(s[i]);
 		i++;

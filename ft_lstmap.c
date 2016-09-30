@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Iterates through a linked list and applies a callback function to each node,
+**	created a new linked list out of that operation.
+*/
+
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list*))
 {
 	t_list	*result;

@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-**	Reverses a string non-destructively.
+**	Reverses a string non-destructively (does not allocate memory).
 */
 
 char		*ft_strrev(char *str)

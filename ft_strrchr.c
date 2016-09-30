@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Searches a string in reverse for the character represented by c.
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int		size;

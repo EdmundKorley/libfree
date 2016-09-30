@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	Allocates a buffer of memory and fills it with NUL-characters. If
+**	the allocation is unsuccessful, it propagates the NULL pointer.
+*/
+
 void	*ft_memalloc(size_t size)
 {
 	void	*buffer;

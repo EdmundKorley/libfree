@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+**	Allocates a new buffer filled with NUL-characters.
+*/
+
 char	*ft_strnew(size_t size)
 {
 	return ((char *)ft_memalloc(size + 1));
