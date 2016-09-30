@@ -6,9 +6,11 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:45:50 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 10:46:47 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 17:10:34 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 **	ft_strlcat copies and concatenates a source string into a destination
@@ -17,26 +19,31 @@
 **	the result.
 */
 
-#include "libft.h"
-
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t		i;
-	size_t		re;
+	char			*buffer;
+	char			*head;
+	size_t			n;
+	size_t			dlen;
 
-	re = 0;
-	i = -1;
-	while (src[++i])
-		;
-	re = i;
-	i = -1;
-	while (dst[++i] && i < size)
-		;
-	if (i < size)
-		re += i;
-	else
-		re += size;
-	if ((int)(size - ft_strlen(dst) - 1) > 0)
-		ft_strncat(dst, src, size - ft_strlen(dst) - 1);
-	return (re);
+	buffer = dst;
+	head = (char *)src;
+	n = size;
+	while (n-- != 0 && *buffer != '\0')
+		buffer++;
+	dlen = buffer - dst;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(src));
+	while (*src)
+	{
+		if (n != 1)
+		{
+			*buffer++ = *src;
+			n--;
+		}
+		src++;
+	}
+	*buffer = '\0';
+	return (dlen + (src - head));
 }
