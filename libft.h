@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 15:40:12 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/09/29 16:13:40 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,22 +86,6 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 /*
-**	These set of functions implement useful routines on integer arrays.
-*/
-
-void				ft_tabforeach(int *tab, int len, void (*applyf)(int));
-int					*ft_tabmap(int *tab, int len, int (*applyf)(int));
-int					ft_tabreduce(int *tab, int len, int memo,
-					int (*applyf)(int, int));
-int					*ft_tabfilter(int *tab, int len, int (*applyf)(int));
-int					ft_tabsum(int *tab, int len);
-int					ft_tabmax(int *tab, int len);
-int					ft_tabmin(int *tab, int len);
-int					ft_tabmean(int *tab, int len);
-int					*ft_tabnewrange(int start, int end, int skip);
-int					*ft_tabrotate(int *tab, int len, int torotate);
-
-/*
 **	These set of functions involving sending data to different streams,
 **	either standard out or a specified stream.
 */
@@ -151,6 +135,22 @@ void				btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 int					btree_level_count(t_btree *root);
 void				*btree_search_item(t_btree *root, void *data_ref,
 					int (*cmpf)(void*, void*));
+
+/*
+**	These set of functions implement useful routines on integer arrays.
+*/
+
+void				ft_tabforeach(int *tab, int len, void (*applyf)(int));
+int					*ft_tabmap(int *tab, int len, int (*applyf)(int));
+int					ft_tabreduce(int *tab, int len, int memo,
+					int (*applyf)(int, int));
+int					*ft_tabfilter(int *tab, int len, int (*applyf)(int));
+int					ft_tabsum(int *tab, int len);
+int					ft_tabmax(int *tab, int len);
+int					ft_tabmin(int *tab, int len);
+int					ft_tabmean(int *tab, int len);
+int					*ft_tabnewrange(int start, int end, int skip);
+int					*ft_tabrotate(int *tab, int len, int torotate);
 
 /*
 **	These set of functions involve linear algebra operations on matrices.
