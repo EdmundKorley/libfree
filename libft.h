@@ -21,7 +21,9 @@
 # include <string.h>
 
 /*
-**	These set of functions manipulate raw memory at the byte level.
+**	These unctions manipulate raw memory at the byte level.
+**	They mostly cast this memory to be an `unsigned char` or `t_byte`
+**	under the hood to be able to manipulate at a byte-by-byte level.
 */
 
 void				ft_bzero(void *s, size_t n);
@@ -37,8 +39,8 @@ void				ft_memdel(void **ap);
 void				*ft_memrotate(void *s, size_t size, size_t nrotate);
 
 /*
-**	These set of functions manipulate strings,
-**	and primitive data types like ints and chars.
+**	These functions manipulate strings and primitive data types
+**	like ints and chars.
 */
 
 int					ft_tolower(int c);
@@ -86,7 +88,7 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 /*
-**	These set of functions involving sending data to different streams,
+**	These functions involving sending data to different streams,
 **	either standard out or a specified stream.
 */
 
@@ -100,7 +102,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 /*
-**	These set of functions involve creating and manipulating linked lists.
+**	These functions involve creating and manipulating linked lists.
 */
 
 typedef	struct		s_list
@@ -118,7 +120,7 @@ void				ft_lstiter(t_list *lst, void (*applyf)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*applyf)(t_list *elem));
 
 /*
-**	These set of functions involve creating and manipulating binary trees.
+**	These functions involve creating and manipulating binary trees.
 */
 
 typedef	struct		s_btree
@@ -137,7 +139,7 @@ void				*btree_search_item(t_btree *root, void *data_ref,
 					int (*cmpf)(void*, void*));
 
 /*
-**	These set of functions implement useful routines on integer arrays.
+**	These functions implement useful routines on integer arrays.
 */
 
 void				ft_tabforeach(int *tab, int len, void (*applyf)(int));
@@ -153,7 +155,9 @@ int					*ft_tabnewrange(int start, int end, int skip);
 int					*ft_tabrotate(int *tab, int len, int torotate);
 
 /*
-**	These set of functions involve linear algebra operations on matrices.
+**	These functions involve linear algebra operations on matrices.
+**	Some offer limited or unusual pathways to a given functionality
+**	due to norminette (a C linter) limitations on parameter size.
 */
 
 int					**new_matrix(int x, int y);
@@ -170,8 +174,8 @@ int					matrix_reduce(int **matrix, int w, int h,
 					int(*applyf)(int, int));
 
 /*
-**	These set of functions involve bit-manipulation related routines.
-**	For now, base has to be a a power of 2 for the encoding routines to work.
+**	These functions involve bit-manipulation related routines.
+**	For now, a base has to be a a power of 2 for the encoding routines to work.
 */
 
 char				*encode_base_n(char *buffer, int base, char *c_set);
