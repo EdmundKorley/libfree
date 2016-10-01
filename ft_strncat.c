@@ -6,23 +6,33 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 05:40:00 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/26 07:20:44 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/10/01 07:35:06 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Contatenates n-bytes from src into dst.
+**	Contatenates n-bytes from src into dst. Returning a NUL-terminated
+**	string.
 */
 
-char	*ft_strncat(char *dst, const char *src, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t		dst_len;
-	char		*end_of_dst;
+	char		*buffer;
+	size_t		i;
 
-	dst_len = ft_strlen(dst);
-	end_of_dst = dst + (sizeof(char) * dst_len);
-	dst = (char *)ft_memcpy(dst + dst_len, src, n);
-	return (dst - dst_len);
+	buffer = s1;
+	while (*buffer)
+		buffer++;
+	i = n;
+	while (*s2 != '\0' && i > 0)
+	{
+		*buffer = *s2;
+		buffer++;
+		s2++;
+		i--;
+	}
+	*buffer = '\0';
+	return (s1);
 }

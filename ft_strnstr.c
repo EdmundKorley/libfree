@@ -6,14 +6,15 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 07:31:39 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/24 09:58:18 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/10/01 07:43:01 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Returns the location of the substring little in big, if found.
+**	Returns the location of the substring little in big, if found. We do not
+**	search past the NUL-terminator in the buffer big.
 */
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
@@ -30,7 +31,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	if (len_little > len)
 		return (NULL);
-	while (i < len)
+	while (i < len && *(big + i))
 	{
 		if (ft_strncmp((big + i), little, len_little) == 0)
 		{
