@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 16:13:40 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/10/01 08:57:06 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,18 +160,21 @@ int					*ft_tabrotate(int *tab, int len, int torotate);
 **	due to norminette (a C linter) limitations on parameter size.
 */
 
-int					**new_matrix(int x, int y);
+typedef	struct		s_matrix
+{
+	int				**board;
+	int				width;
+	int				height;
+}					t_matrix;
+
+t_matrix			*new_matrix(int x, int y);
 int					vector_dot_product(int *x, int *y, int len);
-int					**vector_to_matrix(int *vector, int len, int is_vertical);
-int					**matrix_matrix_product(int **x, int filler,
-					int **y, int shared_dim);
-int					**matrix_transpose(int **matrix, int w, int h);
-void				matrix_foreach(int **matrix, int w, int h,
-					void(*applyf)(int));
-int					**matrix_map(int **matrix, int w, int h,
-					int(*applyf)(int));
-int					matrix_reduce(int **matrix, int w, int h,
-					int(*applyf)(int, int));
+t_matrix			*vector_to_matrix(int *vector, int len, int is_vertical);
+t_matrix			*matrix_matrix_product(t_matrix *a, t_matrix *b);
+t_matrix			*matrix_transpose(t_matrix *a);
+void				matrix_foreach(t_matrix *a, void(*applyf)(int));
+t_matrix			*matrix_map(t_matrix *a, int(*applyf)(int));
+int					matrix_reduce(t_matrix *a, int(*applyf)(int, int));
 
 /*
 **	These functions involve bit-manipulation related routines.
