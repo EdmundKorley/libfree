@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 14:25:01 by ekorley           #+#    #+#             */
-/*   Updated: 2016/09/29 14:37:48 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/10/01 08:41:52 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@
 **	is now located at j, i.
 */
 
-int		**matrix_transpose(int **matrix, int w, int h)
+t_matrix	*matrix_transpose(t_matrix *matrix)
 {
-	int		**buffer;
-	int		i;
-	int		j;
+	t_matrix	*buffer;
+	int			i;
+	int			j;
 
-	buffer = new_matrix(h, w);
+	buffer = new_matrix(matrix->width, matrix->height);
 	i = -1;
-	while (++i < w)
+	while (++i < matrix->height)
 	{
 		j = -1;
-		while (++j < h)
-			buffer[i][j] = matrix[j][i];
+		while (++j < matrix->width)
+			buffer->board[j][i] = matrix->board[i][j];
 	}
 	return (buffer);
 }
