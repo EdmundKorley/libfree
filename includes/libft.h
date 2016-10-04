@@ -6,7 +6,7 @@
 /*   By: ekorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 11:34:32 by ekorley           #+#    #+#             */
-/*   Updated: 2016/10/01 08:57:06 by ekorley          ###   ########.fr       */
+/*   Updated: 2016/10/04 16:31:09 by ekorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,9 +155,9 @@ int					*ft_tabnewrange(int start, int end, int skip);
 int					*ft_tabrotate(int *tab, int len, int torotate);
 
 /*
-**	These functions involve linear algebra operations on matrices.
-**	Some offer limited or unusual pathways to a given functionality
-**	due to norminette (a C linter) limitations on parameter size.
+**	These functions involve linear algebra operations on matrices,
+**	including vector dot product, matrix matrix multiplication,
+**	and getting the transpose of a matrix.
 */
 
 typedef	struct		s_matrix
