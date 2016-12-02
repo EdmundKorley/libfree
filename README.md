@@ -1,4 +1,4 @@
-# libft
+# libfree
 A C library of both recoded *libc* and custom functions, including routines for linear algebra, binary trees, linked lists, integer tables, and more.
 
 Run `make`, in the project root, to compile the static library, `libft.a`, then do what you want with it!
